@@ -1,0 +1,3 @@
+In this backend part i used same dependency and classes like model,dao,daoimpl,Junit Test class etc,
+
+But in this backend i used Oracle 11 g XE version database thatswhy the adding the dependency of database is little bit differt from adding H2 Database dependency.
