@@ -34,13 +34,13 @@ public class DBConfig
 	@Bean
 	public SessionFactory getSessionFactory()
 	{
-		/*Properties prop=new Properties();
+		Properties prop=new Properties();
 		prop.put("hibernate.hbm2ddl.auto","update");
 		prop.put("hibernate.dialect","org.hibernate.dialect.Oracle10gDialect");
-		prop.put("hibernate.temp.use_jdbc_metadata_defaults","false");*/ 				//Extra Adding In Second Project
+		prop.put("hibernate.temp.use_jdbc_metadata_defaults","false");	//Extra Adding In Second Project for remove createLOB() Execeeption at the time of testing
 		
 		LocalSessionFactoryBuilder factory=new LocalSessionFactoryBuilder(getOracleDataSource());
-		//factory.addProperties(prop);
+		factory.addProperties(prop);
 		factory.addAnnotatedClass(Blog.class);
 		factory.addAnnotatedClass(BlogComment.class);
 		
