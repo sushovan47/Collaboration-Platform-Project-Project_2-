@@ -1,9 +1,13 @@
 package com.coll.dao;
+import java.util.List;
 import javax.transaction.Transactional;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.hibernate.Session;
+
 
 import com.coll.model.UserDetail;
 
@@ -45,8 +49,20 @@ public class UserDAOIml implements UserDAO
 	@Override
 	public UserDetail checkUser(UserDetail user) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Session session=sessionFactory.openSession();
+		Query query=session.createQuery("from UserDetail where username=:uname and password=:passwd");
+		query.setParameter("uname",user.getUsername());
+		query.setParameter("passwd",user.getPassword());
+		List<UserDetail> listuser=query.list();
+		session.close();
+		if(listuser.size()>0)
+		{
+			return listuser.get(0);
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 	@Override
