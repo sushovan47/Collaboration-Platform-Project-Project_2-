@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.coll.model.Blog;
 import com.coll.model.BlogComment;
+import com.coll.model.UserDetail;
 
 @Configuration
 @EnableTransactionManagement
