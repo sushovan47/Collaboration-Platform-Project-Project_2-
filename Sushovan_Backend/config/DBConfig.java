@@ -43,6 +43,7 @@ public class DBConfig
 		factory.addProperties(prop);
 		factory.addAnnotatedClass(Blog.class);
 		factory.addAnnotatedClass(BlogComment.class);
+		factory.addAnnotatedClas(UserDetail.class);
 		
 		SessionFactory sessionFactory=factory.buildSessionFactory();
 		
