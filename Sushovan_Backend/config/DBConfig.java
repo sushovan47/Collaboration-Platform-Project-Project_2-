@@ -12,6 +12,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.coll.model.Blog;
 import com.coll.model.BlogComment;
+import com.coll.model.Forum;
+import com.coll.model.ForumComment;
+import com.coll.model.Friend;
 import com.coll.model.UserDetail;
 
 @Configuration
@@ -35,16 +38,19 @@ public class DBConfig
 	@Bean
 	public SessionFactory getSessionFactory()
 	{
-		Properties prop=new Properties();
+		/*Properties prop=new Properties();
 		prop.put("hibernate.hbm2ddl.auto","update");
 		prop.put("hibernate.dialect","org.hibernate.dialect.Oracle10gDialect");
-		prop.put("hibernate.temp.use_jdbc_metadata_defaults","false");	//Extra Adding In Second Project for remove createLOB() Execeeption at the time of testing
+		prop.put("hibernate.temp.use_jdbc_metadata_defaults","false");*/ 				//Extra Adding In Second Project
 		
 		LocalSessionFactoryBuilder factory=new LocalSessionFactoryBuilder(getOracleDataSource());
-		factory.addProperties(prop);
+		//factory.addProperties(prop);
 		factory.addAnnotatedClass(Blog.class);
 		factory.addAnnotatedClass(BlogComment.class);
-		factory.addAnnotatedClas(UserDetail.class);
+		factory.addAnnotatedClass(UserDetail.class);
+		factory.addAnnotatedClass(Forum.class);
+		factory.addAnnotatedClasses(ForumComment.class);
+		factory.addAnnotatedClass(Friend.class);
 		
 		SessionFactory sessionFactory=factory.buildSessionFactory();
 		
