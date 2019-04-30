@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+			<!-- Adding CDN for Angular JS,Angular-Route,RouteConfiguration File -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="RouteConfig.js"></script>
+<script src="UserController.js"></script>
+
+
+			<!-- Adding CDN for BootStrap which i used in my FirstProject File -->
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<title>Frontend_Project</title>
+
+</head>
+<body ng-app="myApp">
+
+			<!-- Using NAVBAR  just like FirstProject start here -->
+
+<nav class="navbar navbar-inverse">
+  	<div class="container">
+    <div class="navbar-header">
+      		<a class="navbar-brand" href="#">Frontend</a>
+    </div>
+    	<ul class="nav navbar-nav">
+		    <li class="active"><a href="#">Home</a>
+			<li><a href="#/login">Login</a>
+			<li><a href="#/register">Register</a></li>
+		</ul>
+	</div>
+</nav>
+
+			<!-- Using NAVBAR  just like FirstProject End here -->
+			
+			
+			
+<div ng-view></div>
+
+</body>
+</html>
