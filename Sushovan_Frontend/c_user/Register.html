@@ -1,0 +1,38 @@
+<!--  <h3 allign="center">Register Page</h3>  For Checking Only Page is Working or Not-->
+<br/>	
+	<div class="container" ng-controller="UserController">
+		<table class="table table-borderd">
+		<tr bgcolor="pink">
+			<td colspan="2" class="text-center">	SignIn Here</td>
+		</tr>
+		
+		<tr>
+			<td>User Name</td>
+			<td><input type="text" name="uname" ng-model="user.username"/></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" name="password"ng-model="user.password"/></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input type="text" name="email" ng-model="user.emailId"/></td>
+		</tr>
+		<tr>
+			<td>Role</td>
+			<td><input type="text" name="role" ng-model="user.role"/></td>
+		</tr>
+		<tr>
+			<td>Online</td>
+			<td><input type="text" name="isOnline" ng-model="user.isOnline"/></td>
+		</tr>
+		<tr bgcolor="pink">
+			<td colspan="2">
+				<center><input type="button" class="btn btn-success" ng-click="register()"value="Sign In"/></center>
+				
+				
+				</td>
+				</tr>
+		</table>
+	
+	</div>

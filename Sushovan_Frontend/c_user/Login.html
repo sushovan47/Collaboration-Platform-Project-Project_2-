@@ -1,0 +1,27 @@
+<!--  <h3 allign="center">Login Page</h3>  For Checking Only Page is Work Or Not-->
+
+
+<br/><br/><br/>	
+	<div class="container" ng-controller="UserController">
+				<table class="table table-borderd">
+		<tr bgcolor="pink">
+			<td colspan="2" class="text-center">	SignIn Here</td>
+		</tr>
+		
+		<tr>
+			<td>User Name</td>
+			<td><input type="text" name="uname" ng-model="user.username"/></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" name="password"ng-model="user.password"/></td>
+		</tr>
+		<tr bgcolor="pink">
+			<td colspan="2">
+				<center><input type="button" class="btn btn-success" ng-click="loginCheck()"value="Log In"/></center>
+				<a href="Register.html">SignIn</a>
+			</td>
+		</tr>
+				</table>
+	</div>
+		
