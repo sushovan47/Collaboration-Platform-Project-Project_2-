@@ -50,15 +50,16 @@ public class UserRestController
 			return new ResponseEntity<UserDetail>(user,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	@PostMapping("/updateUser")
-	public ResponseEntity<String> updateUser(@RequestBody UserDetail user)
+	@PostMapping(value="/updateUser/{username}")
+	public ResponseEntity<String> updateUser(@PathVariable("username")String username,@RequestBody UserDetail user)
 	{
-		user.setIsOnline("Y");
-		user.setRole("ROLE_USER");
-		user.setStatus("A");
-		if(userDAO.updateUser(user))
+		UserDetail user1=userDAO.getUser(username);
+		
+		user1.setMemberName(user.getMemberName());
+		user1.setEmailId(user.getEmailId());
+		if(userDAO.updateUser(user1))
 		{
-			return new ResponseEntity<String>("User Detail is udated",HttpStatus.OK);
+			return new ResponseEntity<String>("User Detail is updated",HttpStatus.OK);
 		}
 		else
 		{
