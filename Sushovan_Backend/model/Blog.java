@@ -19,6 +19,7 @@ public class Blog
 	String blogName;
 	String blogContent;
 	String username;
+	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern="dd-MM-yyyy") //Extra Update (just for shownig the JSON Date in a manner way)
 	Date createDate;
 	String status;
 	int likes;
