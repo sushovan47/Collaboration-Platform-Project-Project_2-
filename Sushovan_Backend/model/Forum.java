@@ -22,6 +22,7 @@ public class Forum
 	private String ForumName;
 	private String ForumContent;
 	private String username;
+	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern="dd-MM-yyyy")
 	private Date createDate;
 	private String status;
 	public int getForumId() {
