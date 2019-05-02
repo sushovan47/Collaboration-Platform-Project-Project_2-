@@ -19,6 +19,7 @@ public class ForumComment
 	 int commentId;
 	int ForumId;
 	String commentName;
+	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern="dd-MM-yyyy")
 	Date commentDate;
 	int userId;
 	String username;
