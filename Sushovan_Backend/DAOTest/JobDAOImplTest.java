@@ -41,6 +41,7 @@ public class JobDAOImplTest
 		job.setLastDatetoApply(new java.util.Date(2019, 05, 02));
 		
 		assertTrue("Problem in adding a job",jobDAO.addJob(job));
+		System.out.println("Job is added to the database, Please Check your Oracle Databse in Job Table");
 	}
 
 }
