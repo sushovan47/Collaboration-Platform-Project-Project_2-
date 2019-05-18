@@ -9,7 +9,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.coll.dao.FriendDAO;
-import com.coll.model.Forum;
 import com.coll.model.Friend;
 
 public class FriendDAOImplTest 
@@ -20,7 +19,7 @@ public static FriendDAO friendDAO;
 	@BeforeClass
 	public static void initialize()
 	{
-		@SuppressWarnings("resource")
+		
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 		
 		context.scan("com.coll");
@@ -31,43 +30,59 @@ public static FriendDAO friendDAO;
 	}
 	@Test
 	@Ignore
-	public void addFriendTest()
+	public void sendFriendRequest()
 	{
 		Friend friend=new Friend();
-		friend.setFreindId("ravi67");
-		friend.setFriendName("Ravi Shankar Kumar");
-		friend.setUsername("tarun");
-		friend.setStatus("Y");
+		friend.setUsername("Ayan");		//Whichever you have in database.
+		friend.setFriendUserName("ramesh");
+		assertTrue("Problem in sending Request",friendDAO.sendFriendRequest(friend));
 		
-		assertTrue("Problem in adding Friend",friendDAO.addFriend(friend));
-		
-		System.out.println("Data Stored Into The Friend Table in Oracle Database");
+		System.out.println("Friend request sent to another User");
 	}
 	@Test
 	@Ignore
-	public void deleteFriendTest()
+	public void acceptFriendRequest()
 	{
-		Friend friend=friendDAO.getFriend("kou76");
-		assertTrue("Problem occured during deleting Forum",friendDAO.deleteFriend(friend));
+		assertTrue("Problem on accepting Request",friendDAO.acceptFriendRequest(964));
 		
-		System.out.println("Data is deleted From Database Successfully..");
+		System.out.println("Friend request accept from another User");
 	}
 	@Test
-	public void listFriendTest()
+	@Ignore
+	public void deleteFriendRequest()
 	{
-		List<Friend> listFriend=friendDAO.listFriend();
-		assertTrue("Problem in listing Friend details",listFriend.size()>0);
+		assertTrue("Problem on Deleting Request",friendDAO.deleteFriendRequest(964));
 		
-		System.out.println("Data Retrived from Database");
-		for(Friend friend:listFriend)
-		{
-			System.out.print(friend.getFreindId()+":::");
-			System.out.print(friend.getFriendName()+":::");
-			System.out.print(friend.getUsername()+":::");
-			System.out.println(friend.getStatus());
-		}
-		
+		System.out.println("Friend request delete from another User");
 	}
-	
+	@Test
+	@Ignore
+	public void showFriendListTest()
+	{
+		List<Friend> friendList=friendDAO.showFriendList("Ayan");
+		assertTrue("Problem in showing Friend List",friendList.size()>0);
+		
+		System.out.println("=====Friend List of accepted Friends Only=====");
+		
+		for(Friend friend:friendList)
+		{
+			System.out.println(friend.getUsername()+"::::");
+			System.out.println(friend.getFriendUserName());
+		}
+	}
+	@Test
+	public void pendingFriendListTest()
+	{
+		List<Friend> friendList=friendDAO.showPendingFriendRequest("Radhika");
+		assertTrue("Problem in showing Friend List",friendList.size()>0);
+		
+		System.out.println("=====Friend List of Pending Friends Only=====");
+		
+		for(Friend friend:friendList)
+		{
+			System.out.print(friend.getUsername()+"::::");
+			System.out.print(friend.getFriendUserName());
+		}
+	}
 
 }
