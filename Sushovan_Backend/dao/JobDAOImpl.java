@@ -35,9 +35,24 @@ public class JobDAOImpl  implements JobDAO
 		}
 		
 	}
+	
+	@Override
+	public boolean updateJob(Job job) 
+	{
+		try
+		{
+			sessionFactory.getCurrentSession().update(job);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		
+	}
 
 	@Override
-	public List<Job> showJobs(Job job) 
+	public List<Job> showJobs() 
 	{
 		Session session=sessionFactory.openSession();
 		Criteria criteria=session.createCriteria(Job.class);
@@ -53,7 +68,9 @@ public class JobDAOImpl  implements JobDAO
 		Session session=sessionFactory.openSession();
 		Job job=session.get(Job.class,jobId);
 		session.close();
-		return null;
+		return job;
 	}
+
+	
 	
 }
