@@ -1,0 +1,25 @@
+<div class="container" ng-controller="BlogController">
+				<table class="table table-borderd">
+		<tr bgcolor="pink">
+			<td colspan="2" class="text-center">	SignIn Here</td>
+		</tr>
+		
+		<tr>
+			<td>Blog Name</td>
+			<td><input type="text" name="uname" ng-model="blog.blogName"/></td>
+		</tr>
+		<tr>
+			<td>Blog Content</td>
+			<td><textarea cols="20" rows="7" name="blogcontent"ng-model="blog.blogContenet"></textarea></td>
+		</tr>
+		<tr bgcolor="pink">
+			<td colspan="2">
+				<center><input type="button" class="btn btn-success" ng-click="addBlog()"value="Add Blog"/></center>
+				<a href="Register.html">SignIn</a>
+			</td>
+		</tr>
+				</table>
+	</div>
+
+</body>
+</html>
