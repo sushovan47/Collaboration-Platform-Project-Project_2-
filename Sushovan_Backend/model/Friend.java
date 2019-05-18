@@ -1,24 +1,28 @@
 package com.coll.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="friend1")
+@SequenceGenerator(name="friendid1seq",sequenceName="friendid1_seq")
 public class Friend 
 {
 	@Id
-	
-	String freindId;
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="friendid1seq")
+	int friendId;
 	String username;
-	String friendName;
+	String friendUserName;
 	String status;
-	public String getFreindId() {
-		return freindId;
+	public int getFriendId() {
+		return friendId;
 	}
-	public void setFreindId(String freindId) {
-		this.freindId = freindId;
+	public void setFriendId(int friendId) {
+		this.friendId = friendId;
 	}
 	public String getUsername() {
 		return username;
@@ -26,11 +30,12 @@ public class Friend
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getFriendName() {
-		return friendName;
+	
+	public String getFriendUserName() {
+		return friendUserName;
 	}
-	public void setFriendName(String friendName) {
-		this.friendName = friendName;
+	public void setFriendUserName(String friendUserName) {
+		this.friendUserName = friendUserName;
 	}
 	public String getStatus() {
 		return status;
