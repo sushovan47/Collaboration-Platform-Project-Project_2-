@@ -19,6 +19,7 @@ public class WebResolver
 		resolver.setPrefix("/WEB-INF/jsp");
 		resolver.setSuffix(".jsp");
 		System.out.println("=====InternalViewResolver Object  Works Fine====");
+		System.out.println("===============WebResolver Class has been executed Successfully==============");
 		System.out.println("*******Collaboration Project MiddleWare Works Fine******");
 		return resolver;
 	}
