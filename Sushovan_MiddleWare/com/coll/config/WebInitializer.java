@@ -23,6 +23,7 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 	protected String[] getServletMappings() 
 	{
 		System.out.println("=====Get ServletMappingConfigClass Generated Successfully====");
+		System.out.println("===============WebInitilizer Class has been executed Successfully==============");
 		return new String[] {"/"};
 	}
 
