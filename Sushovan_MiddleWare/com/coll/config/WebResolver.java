@@ -23,4 +23,11 @@ public class WebResolver
 		System.out.println("*******Collaboration Project MiddleWare Works Fine******");
 		return resolver;
 	}
+	@Bean
+	public CommonsMultipartResolver getMultipartResolver()
+	{
+		CommonsMultipartResolver resolver=new CommonsMultipartResolver();
+		resolver.setMaxUploadSizePerFile(1000000);
+		return resolver;
+	}
 }
