@@ -33,5 +33,5 @@ public class ProfilePictureDAOImpl implements ProfilePictureDAO
 		session.close();
 		return profilePicture;
 	}
-
+	//Side by side You have to create a table in Oracle Database named as "ProfilePicture" with username and  image blob two parameters. 
 }
