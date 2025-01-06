@@ -3,6 +3,9 @@ package com.coll.dao;
 import java.util.List;
 
 import com.coll.model.BlogComment;
+/**
+ * BlogCommentDAO comment added fot git commit testing
+ */
 
 public interface BlogCommentDAO 
 {
