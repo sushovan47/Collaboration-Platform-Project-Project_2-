@@ -20,6 +20,9 @@ import com.coll.model.UserDetail;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.coll")
+/**
+ * DBConfig Database configuration related classes added
+ */
 public class DBConfig 
 {	
 	@Bean
