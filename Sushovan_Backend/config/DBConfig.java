@@ -19,7 +19,7 @@ import com.coll.model.UserDetail;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.coll123456789")
+@ComponentScan("com.coll")
 /**
  * DBConfig Database configuration related classes added
  */
